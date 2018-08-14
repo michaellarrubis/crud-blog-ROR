@@ -1,0 +1,27 @@
+<% provide( :title, "Admin List")%>
+
+  <!--start l-contents-->
+<%= render "partials/admin_navbar" %>
+  <div class="l-container u-clear">
+      <!--start l-main-->
+      <main class="l-main js-main">
+          <div class="l-main-block"></div>
+            <%= link_to new_blog_path, class: "l-main-button" do %>
+              <div class="button">
+                <p class="button-text">New Article</p>
+              </div>
+            <% end %>
+          <ul class="archive archive-admin">
+            <% @blogs.each do |blog| %>
+              <li class="archive-item">
+                <%= link_to edit_blog_path(blog), class: "post-article" do %>
+                    <time class="post-article-date"><%= blog.created_at.strftime("%d %b, %Y")%></time>
+                    <h1 class="post-article-title"><%= blog.title %></h1>
+                <% end %>
+              </li> 
+            <% end %>
+          </ul>
+      </main>
+      <!--end l-main-->
+  </div> 
+

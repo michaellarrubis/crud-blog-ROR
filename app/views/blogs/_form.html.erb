@@ -1,0 +1,24 @@
+      <%= form_for(blog) do |f| %> 
+        <label for="blog_image" class="form-title">EYE CATCH IMAGE
+          <div class="form-file u-clear">
+              <span class="form-file-button" for="blog_image">UPLOAD</span>
+          </div>
+        </label>
+        <%= f.file_field :image, class: "input input-image" %>
+
+        <%= f.label :title, "TITLE", class: "form-title" %>
+        <div class="form-body">
+          <%= f.text_field :title, class: "input input-text" %>
+        </div>
+
+        <%= f.label :content, "CONTENT", class: "form-title" %>
+        <div class="form-textarea">
+          <%= f.text_area :content, cols: "30", rows: "10", class: "input input-contents" %>
+        </div>
+        <label for="submit" class="form-button">
+            <div class="button">
+                <p class="button-text">Submit</p>
+            </div>
+        </label>
+        <%= f.submit class: "input input-submit", id: "submit" %>
+      <% end %>

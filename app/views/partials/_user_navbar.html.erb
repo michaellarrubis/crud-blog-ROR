@@ -1,0 +1,35 @@
+ <!--start header-->
+<header class="l-header  js-header">
+    <div class="l-header-top u-clear">
+        <div class="l-header-logo">
+            <%= link_to root_path, class: "logo" do %>
+                <%= image_tag("logo.png", width: "253", height: "28", alt: "BLOG")%>
+            <% end %> 
+        </div>
+        <div class="l-header-hamburger">
+            <a href="#" class="hamburger js-hamburger " >
+                <span class="hamburger-item"></span>
+                <span class="hamburger-item"></span>
+                <span class="hamburger-item"></span>
+            </a>
+        </div>
+    </div>
+</header>
+<!--end header-->
+
+<nav class="nav js-nav">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <%= link_to "TOP", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Archive", archive_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Facebook</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Twitter</a>
+        </li>
+    </ul>
+</nav>

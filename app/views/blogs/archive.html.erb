@@ -1,0 +1,36 @@
+<% provide(:title, "All Archives") %>
+<%= render "partials/user_navbar" %>
+
+<!--start l-contents-->
+<div class="l-container u-clear">
+
+    <!--start l-main-->
+    <main class="l-main js-main">
+        <div class="l-main-block"></div>
+            <div class="page-number">
+                Page <span ><%= @all_archives.current_page %>/<%= @all_archives.total_pages %></span>
+            </div>
+            <div class="archive">
+                <ul class="archive-list">
+                    <% @all_archives.each do |archive| %>
+	                    <li class="archive-item">
+	                        <article class="card">
+	                            <a href="#" class="card-link">
+	                            	<%= image_tag archive.image.url(:medium), alt: archive.title, class: "card-image" %>
+	                                <div class="card-bottom">
+	                                    <h1 class="card-title"><%= archive.title %></h1>
+	                                    <time class="card-date">
+							                <%= archive.created_at.strftime("%d %b, %Y")%>
+	                                    </time>
+	                                </div>
+	                            </a>
+	                        </article>
+	                    </li>
+	                <% end %>
+                </ul>
+                <div class="digg_pagination">
+				  <%= will_paginate @all_archives, previous_label: "&lt;", next_label: "&gt;", :container => false %>
+				</div> 
+            </div>
+    </main>
+    <!--end l-main-->

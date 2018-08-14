@@ -1,0 +1,18 @@
+
+  <!--start header-->
+  <header class="l-header l-header-admin js-header">
+      <div class="l-header-top u-clear">
+        <div class="l-header-logo">
+          <%= link_to blogs_path, class: "logo" do %>
+              <%= image_tag("logo-admin.png", width: "138", height: "28", alt: "BLOG")%>
+          <% end %>  
+        </div>
+        <div class="l-header-text">
+              <p>ADMIN PAGE</p>
+              <% if current_admin %>
+                 <p>(<%= link_to "Sign Out",destroy_admin_session_path, method: :delete %>)</p>
+              <% end %>
+        </div>
+      </div>
+  </header>
+  <!--end header-->

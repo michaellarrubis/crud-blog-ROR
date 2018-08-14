@@ -1,0 +1,35 @@
+ <% provide(:title, @blog.title) %>
+ <%= render "partials/user_navbar" %>
+
+<!--start l-main-->
+<main class="l-main js-main">
+    <div class="l-main-block"></div>
+    <div class="single">
+    	<%= image_tag @blog.image.url(:medium), class: "single-image" %>
+        <div class="l-container u-clear">
+            <h1 class="single-title"><%= @blog.title %></h1>
+            <time class="single-date"><%= @blog.created_at.strftime("%d %b, %Y")%></time>
+            <p class="single-desc">
+            	<%= @blog.content %>
+            </p>
+            <%= link_to root_path, class: "form-button" do %>
+	          <div class="button">
+	            <p class="button-text">Back</p>
+	          </div>
+	        <% end %> 
+        </div>
+    </div>
+
+	<!--footer ここから-->
+    <footer class="l-footer ">
+    	
+        <div class="l-footer-button">
+	        <a class="page-top js-scroll" href="#js-body">
+	            <span class="page-top-arrow"></span>
+	        </a>
+        </div>
+    
+    </footer>
+    <!--footer ここまで-->
+</main>
+<!--end l-main-->  

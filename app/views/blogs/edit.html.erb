@@ -1,0 +1,20 @@
+<% provide(:title, "Editing Blog") %>
+<%= render "partials/admin_navbar" %>
+
+<!--start l-contents-->
+<div class="l-container u-clear">
+	<!--start l-main-->
+	<main class="l-main js-main">
+	    <div class="l-main-block"></div>
+
+		<%= render 'form', blog: @blog %>
+		<%= link_to blogs_path, class: "form-button" do %>
+          <div class="button">
+            <p class="button-text">Back</p>
+          </div>
+        <% end %> 
+	</main>
+	<!--end l-main-->
+</div>
+<!--end l-contents-->
+  
